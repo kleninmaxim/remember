@@ -1,27 +1,27 @@
 # GIT
 
 ### Add all files
- ```shell
+```shell
 git add .
  ```
 
 ### Add all files
- ```shell
+```shell
 git commit -m "Commit"
  ```
 
 ### Push changes to GitHub
- ```shell
+```shell
 git push
  ```
 
 ### Push changes from GitHub
- ```shell
+```shell
 git pull
  ```
 
 ### Delete branch local and remotely
- ```shell
+```shell
 git branch -d <branch-name>
 git push origin :<branch-name>
  ```

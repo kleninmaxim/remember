@@ -1,7 +1,7 @@
 # MYSQL AND UBUNTU
 
 ### Install mysql
- ```shell
+```shell
 sudo apt install mysql-server -y
  ```
 
@@ -14,7 +14,7 @@ GRANT ALL PRIVILEGES ON learn.* TO 'student'@'%' WITH GRANT OPTION;
  ```
 
 ### Remote mysql connection
- ```shell
+```shell
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
  ```
 1) find `bind-address`
