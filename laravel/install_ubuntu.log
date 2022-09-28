@@ -1,0 +1,17 @@
+    # First prepare
+    You need to install php libraries. (php-fpm)
+sudo apt update && sudo apt upgrade -y
+sudo chown -R ubuntu:ubuntu /var/www
+composer create-project laravel/laravel example-app
+
+    # User rights
+sudo chown -R www-data.www-data /var/www/example-app/storage
+sudo chown -R www-data.www-data /var/www/example-app/bootstrap/cache
+
+    # Nginx Settings
+sudo nano /etc/nginx/sites-available/default
+get code from (https://laravel.com/docs/9.x/deployment)
+sudo systemctl restart nginx.service
+
+    # Confirm that the configuration doesn’t contain any syntax errors
+sudo nginx -t

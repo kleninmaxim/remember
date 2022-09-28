@@ -1,0 +1,59 @@
+    # Update system
+sudo apt update && sudo apt upgrade -y
+
+    # Work with systemd proceses
+sudo systemctl restart <systemd-process-name>
+sudo systemctl stop <systemd-process-name>
+sudo systemctl status <systemd-process-name>
+sudo journalctl -f -u <systemd-process-name>
+
+    # Path where all systemd processes and enable or disable process when server was restart
+cd /etc/systemd/system/
+sudo systemctl enable <systemd-process-name>
+sudo systemctl disable <systemd-process-name>
+
+    # Change right for path for linux user
+sudo chown -R ubuntu:ubuntu /var/www
+
+    # Get Ip server
+wget -qO- eth0.me
+
+    # Add new user to ubuntu (https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+adduser ubuntu
+usermod -aG sudo ubuntu
+
+    # Remove enter password for user
+sudo visudo
+ubuntu ALL=(ALL) NOPASSWD:ALL
+
+    # ERROR: Failed to download ... from dist: The zip extension and unzip/7z commands are both missing, skipping.
+sudo apt install zip unzip php8.1-zip -y
+
+    # Find big files
+find . -mount -type f -size +1G 2>/dev/null
+find . -mount -type f -size +100M 2>/dev/null
+sudo du -a / | sort -n -r | head -n 20
+
+    # Firewall
+sudo ufw status
+sudo ufw enable
+sudo ufw allow OpenSSH or sudo ufw allow 22 or sudo ufw allow 22/tcp
+sudo ufw allow 3306
+sudo ufw allow 'Nginx HTTP'
+sudo ufw app list
+
+    # Install nginx
+sudo apt install nginx -y
+sudo ufw app list
+sudo systemctl status nginx
+curl -4 icanhazip.com
+
+    # Made project at nginx with your domain (https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04)
+sudo mkdir -p /var/www/your_domain
+sudo chown -R ubuntu:ubuntu /var/www/your_domain
+sudo chmod -R 755 /var/www/your_domain
+sudo nano /etc/nginx/sites-available/default
+
+    # Alias
+sudo nano ~/.bashrc
+alias p='df -h'
