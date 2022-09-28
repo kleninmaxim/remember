@@ -1,4 +1,4 @@
-# PHPSTORM Settings
+# PHPSTORM SETTINGS
 
 ### Hot button
 * `cntr + alt + s` - open settings
