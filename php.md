@@ -1,4 +1,5 @@
 # PHP AND UBUNTU
+
 ### Install php
  ```shell
 sudo apt-get install software-properties-common
