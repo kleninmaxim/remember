@@ -5,6 +5,11 @@
 sudo apt update && sudo apt upgrade -y
 ```
 
+### Install usefully tools
+```shell
+sudo apt install net-tools
+```
+
 ### Work with systemd processes
 ```shell
 sudo systemctl restart <systemd-process-name>
@@ -59,10 +64,14 @@ sudo du -a / | sort -n -r | head -n 20
 ### Firewall
 ```shell
 sudo ufw status
+```
+**Important!** When you enable firewall and if you want to connect on your server by ssh, you must allow it in firewall by one of follow commands:
+```shell
 sudo ufw enable
 ```
-**Important!** If you want to connect on your server by ssh, you must allow it in firewall by one of follow commands:
-
+```shell
+sudo ufw disable
+```
 ```shell
 sudo ufw allow OpenSSH
 ```
