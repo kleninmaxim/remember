@@ -76,8 +76,21 @@ ON UPDATE SET NULL;
  ```
 
 ### JOIN
+* Note: that `innser join` is the same `join` 
  ```mysql
 SELECT * FROM store JOIN address ON store.address_id = address.address_id;
  ```
 
 <img alt="Simple Join Example" src=".\images\mysql_join.png" title="Join"/>
+
+ ```mysql
+SELECT * FROM store RIGHT JOIN address ON store.address_id = address.address_id;
+ ```
+
+<img alt="Simple Right Join Example" src=".\images\mysql_right_join.png" title="Join"/>
+
+ ```mysql
+SELECT * FROM store LEFT JOIN address ON store.address_id = address.address_id;
+ ```
+
+<img alt="Simple Right Join Example" src=".\images\mysql_left_join.png" title="Join"/>
