@@ -94,7 +94,14 @@ SELECT * FROM store LEFT JOIN address ON store.address_id = address.address_id;
 
 ### JOIN and GROUP BY Example
  ```mysql
-SELECT customer.customer_id, customer.first_name, customer.last_name, COUNT(rental_id) FROM customer LEFT JOIN rental ON rental.customer_id = customer.customer_id GROUP BY customer.customer_id;
+SELECT 
+    customer.customer_id, 
+    customer.first_name, 
+    customer.last_name, 
+    COUNT(rental_id) 
+FROM customer 
+    LEFT JOIN rental ON rental.customer_id = customer.customer_id 
+GROUP BY customer.customer_id;
  ```
 <img alt="JOIN and GROUP BY Example" src=".\images\mysql_join_group_by.png" title="Join"/>
 
