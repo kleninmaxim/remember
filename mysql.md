@@ -1,4 +1,4 @@
-# MYSQL AND UBUNTU
+# MYSQL
 
 ### Install mysql
 ```shell
@@ -14,6 +14,16 @@ sudo service mysql start
 ```shell
 sudo mysql
 sudo mysql -u student -pSTUDENT
+ ```
+
+### Remote mysql connection
+```shell
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+ ```
+1) find `bind-address`
+2) change to `bind-address            = 0.0.0.0`
+ ```shell
+sudo systemctl restart mysql
  ```
 
 ### Create Database and user
@@ -42,18 +52,32 @@ SOURCE /home/ubuntu/projects/remember/examples/mysql/sakila-db/sakila-schema.sql
 SOURCE /home/ubuntu/projects/remember/examples/mysql/sakila-db/sakila-data.sql;
  ```
 
-
 ### Show full tables
  ```mysql
  SHOW FULL TABLES;
  ```
 
-### Remote mysql connection
-```shell
-sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+### Add foreign key
+* Foreign key in field `post_id` of `comments` table, for `posts` field `id`
+* `ON DELETE CASCADE` means, if `post` with `id` will be deleted, all `comments` with `post_id` associated will be deleted 
+* `ON UPDATE CASCADEE` means, if `post` with `id` will be updated, all `comments` with `post_id` associated will be updated 
+ ```mysql
+ ALTER TABLE comments ADD FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE ON UPDATE CASCADE;
  ```
-1) find `bind-address`
-2) change to `bind-address            = 0.0.0.0`
+
+### ON update and delete Examples
+ ```mysql
+ON DELETE CASCADE;
+ON DELETE RESTRICT;
+ON DELETE SET NULL;
+ON UPDATE CASCADE;
+ON UPDATE RESTRICT;
+ON UPDATE SET NULL;
  ```
-sudo systemctl restart mysql
+
+### JOIN
+ ```mysql
+SELECT * FROM store JOIN address ON store.address_id = address.address_id;
  ```
+
+<img alt="Simple Join Example" src=".\images\mysql_join.png" title="Join"/>
