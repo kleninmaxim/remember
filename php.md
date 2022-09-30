@@ -51,3 +51,7 @@ sudo nano /etc/php/8.1/cli/php.ini
 2) type: `;error_log = php_errors.log`
 3) set directory. As example: `/home/ubuntu/logs/php_errors.log`
 
+### Built-in web server. Run php in your browser
+```shell
+php -S localhost:8000
+```
