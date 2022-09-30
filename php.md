@@ -6,7 +6,7 @@ sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt install php8.1 -y
- ```
+```
 
 ### Install php libraries
 ```shell
@@ -25,7 +25,7 @@ sudo apt install php8.1-xml -y
 ```
 ```shell
 sudo apt install php8.1-common && sudo apt install php8.1-cli && sudo apt install php8.1-fpm && sudo apt install php8.1-mysql && sudo apt install php8.1-memcache && sudo apt install php8.1-memcached -y && sudo apt install php8.1-bcmath && sudo apt install php8.1-curl && sudo apt install php8.1-mbstring -y && sudo apt install php8.1-gmp -y && sudo apt install php8.1-zip -y && sudo apt install php8.1-xml -y
- ```
+```
 
 ### Install composer
 Official site: [composer](https://getcomposer.org/download/)
@@ -40,13 +40,13 @@ sudo mv composer.phar /usr/local/bin/composer
 ### Change php version
 ```shell
 sudo update-alternatives --config php
- ```
+```
 
 ### Turn on php error_log to file
 ```shell
 cd /etc/php/8.1/cli
 sudo nano /etc/php/8.1/cli/php.ini
- ```
+```
 1) press: f6
 2) type: `;error_log = php_errors.log`
 3) set directory. As example: `/home/ubuntu/logs/php_errors.log`

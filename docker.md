@@ -9,7 +9,7 @@ docker run -p 8080:8080 -v /app/node_modules -v $(pwd):/app <image-name>
 docker-compose up
 docker-compose up --build
 docker-compose down
- ```
+```
 
 ### Dockerfile build image
 ```shell
