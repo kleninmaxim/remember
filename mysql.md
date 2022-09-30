@@ -133,3 +133,34 @@ HAVING sales > 200
 ORDER BY sales DESC;
  ```
 <img alt="Multiple JOINS Example" src=".\images\mysql_filtering_aggregated_data.png" title="Join"/>
+
+### One-to-One Relationship
+* `user` table has only one associated record into `profile` table
+ ```mysql
+SELECT * FROM user JOIN profile ON user.id = profile.user_id;
+```
+
+### One-to-Many Relationship
+* One user table can have many posts
+ ```mysql
+SELECT post.id, title, body, published_at, users.name author from posts
+JOIN users ON users.id = posts.user_id
+WHERE user_id = 1;
+ ```
+
+### One-to-Many Relationship
+* Posts can have tags.
+* Here table structure:
+ ```
+posts
+    id - integer
+    name - string
+ 
+tags
+    id - integer
+    name - string
+ 
+tag_post
+    post_id - integer
+    tag_id - integer
+ ```
