@@ -107,17 +107,29 @@ GROUP BY customer.customer_id;
 
 ### Multiple JOINS in One Query
  ```mysql
-SELECT 
-    c.customer_id, 
-    c.first_name, 
-    c.last_name, 
-    store.store_id, 
-    COUNT(rental_id) rentals_checked_out, 
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    store.store_id,
+    COUNT(rental_id) rentals_checked_out,
     address.address as store_adress
 FROM customer c
-    LEFT JOIN rental ON rental.customer_id = c.customer_id
-    LEFT JOIN store ON store.store_id = c.store_id
-    LEFT JOIN address ON address.address_id = store.address_id
+         LEFT JOIN rental ON rental.customer_id = c.customer_id
+         LEFT JOIN store ON store.store_id = c.store_id
+         LEFT JOIN address ON address.address_id = store.address_id
 GROUP BY c.customer_id, address.address;
  ```
 <img alt="Multiple JOINS Example" src=".\images\mysql_multiple_joins.png" title="Join"/>
+
+### Filtering Aggregated Data
+ ```mysql
+SELECT title, SUM(amount) sales, COUNT(*) rentals FROM rental
+    JOIN payment ON payment.rental_id = rental.rental_id
+    JOIN inventory ON inventory.inventory_id = rental.inventory_id
+    JOIN film ON film.film_id = inventory.film_id
+GROUP BY title
+HAVING sales > 200
+ORDER BY sales DESC;
+ ```
+<img alt="Multiple JOINS Example" src=".\images\mysql_filtering_aggregated_data.png" title="Join"/>
