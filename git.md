@@ -1,5 +1,26 @@
 # GIT
 
+### Git version
+```shell
+git --version
+```
+
+### Show config of your git
+```shell
+git config
+```
+
+### Set global config
+```shell
+git config --global user.name = 'Klenin Maksim';
+git config --global user.email = 'maksim_klenin_99@mail.ru';
+```
+
+### Create a new git repository
+```shell
+git init
+```
+
 ### Add all files
 ```shell
 git add .
