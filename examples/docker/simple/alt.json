@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "title": "Alternative My Cool Post",
+      "author": "Alternative Andrew"
+    },
+    {
+      "title": "Alternative Another Post",
+      "author": "Alternative Andrew"
+    }
+  ],
+  "profile": {
+    "first_name": "Alternative Andrew",
+    "last_name": "Alternative No",
+    "email": "Alternative example@mail.com"
+  }
+}
