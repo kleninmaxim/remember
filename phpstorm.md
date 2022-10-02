@@ -16,6 +16,7 @@
 * `alt + right` - switch to right file
 * `alt + left` - switch to left file
 * `cntr + f` - find in file
+* `cntr + y` - file structure
 * `cntr + up` - structure of folder
 * `cntr + d` - duplicate
 * `cntr + shift + d` - line deletion

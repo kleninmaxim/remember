@@ -100,6 +100,13 @@ sudo systemctl status nginx
 curl -4 icanhazip.com
 ```
 
+### Install xdebug
+```shell
+sudo apt update
+sudo apt install php8.1-xdebug
+sudo nano /etc/php/8.1/mods-available/xdebug.ini
+```
+
 ### Made project at nginx with your domain
 Usefully link: [Initial Server Setup with Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04)
 ```shell
