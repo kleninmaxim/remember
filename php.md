@@ -55,3 +55,8 @@ sudo nano /etc/php/8.1/cli/php.ini
 ```shell
 php -S localhost:8000
 ```
+
+### Run PhpUnit test 
+```shell
+vendor/bin/phpunit --color tests
+```

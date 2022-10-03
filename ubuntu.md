@@ -121,10 +121,3 @@ sudo nano /etc/nginx/sites-available/default
 sudo nano ~/.bashrc
 ```
 Add alias in file. Example: `alias p='df -h'`
-
-
-### Install phpunit test
-```shell
-sudo apt update
-sudo apt install phpunit -y
-```
