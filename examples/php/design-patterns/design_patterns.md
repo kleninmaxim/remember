@@ -68,8 +68,8 @@ $car = new Basic();
 
 echo $car->getCost() . PHP_EOL;
 
-echo design_patterns.md(new OilChange($car))->getCost();
-echo design_patterns.md(new OilChange($car))->getDescription();
+echo (new OilChange($car))->getCost();
+echo (new OilChange($car))->getDescription();
 ```
 
 ### Gettin' Jiggy With Adapters
