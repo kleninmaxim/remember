@@ -44,8 +44,7 @@ sudo update-alternatives --config php
 
 ### Turn on php error_log to file
 ```shell
-cd /etc/php/8.1/cli
-sudo nano /etc/php/8.1/cli/php.ini
+cd /etc/php/8.1/cli && sudo nano /etc/php/8.1/cli/php.ini
 ```
 1) press: f6
 2) type: `;error_log = php_errors.log`

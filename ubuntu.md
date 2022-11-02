@@ -121,3 +121,12 @@ sudo nano /etc/nginx/sites-available/default
 sudo nano ~/.bashrc
 ```
 Add alias in file. Example: `alias p='df -h'`
+
+### Copy files by ssh between  localhost and server
+```shell
+scp readme.txt user@192.168.0.1:/home/user/temp
+```
+Copy with special ssh key
+```shell
+scp -r -i ~/.ssh/digitalocean readme.txt user@192.168.0.1:/home/user/temp
+```
